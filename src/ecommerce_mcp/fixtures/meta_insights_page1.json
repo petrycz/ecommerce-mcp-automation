@@ -1,45 +1,45 @@
 {
   "data": [
     {
-      "date_start": "2026-08-23",
-      "date_stop": "2026-08-23",
+      "date_start": "2026-08-25",
+      "date_stop": "2026-08-25",
       "account_id": "1234567890",
       "campaign_id": "6001",
       "campaign_name": "Prospecting - Broad US",
-      "spend": "142.37",
-      "impressions": "18420",
-      "clicks": "311",
-      "reach": "15990",
-      "cpm": "7.73",
-      "ctr": "1.688",
+      "spend": "52.30",
+      "impressions": "6200",
+      "clicks": "104",
+      "reach": "5400",
+      "cpm": "8.43",
+      "ctr": "1.677",
       "actions": [
-        { "action_type": "purchase", "value": "6" },
-        { "action_type": "link_click", "value": "298" },
-        { "action_type": "add_to_cart", "value": "22" }
+        { "action_type": "purchase", "value": "3" },
+        { "action_type": "link_click", "value": "99" },
+        { "action_type": "add_to_cart", "value": "9" }
       ],
       "action_values": [
-        { "action_type": "purchase", "value": "254.94" }
+        { "action_type": "purchase", "value": "89.97" }
       ]
     },
     {
-      "date_start": "2026-08-24",
-      "date_stop": "2026-08-24",
+      "date_start": "2026-08-25",
+      "date_stop": "2026-08-25",
       "account_id": "1234567890",
-      "campaign_id": "6001",
-      "campaign_name": "Prospecting - Broad US",
-      "spend": "158.02",
-      "impressions": "19875",
-      "clicks": "289",
-      "reach": "17110",
-      "cpm": "7.95",
-      "ctr": "1.454",
+      "campaign_id": "6002",
+      "campaign_name": "Retargeting - 30d Site Visitors",
+      "spend": "28.75",
+      "impressions": "2100",
+      "clicks": "61",
+      "reach": "1850",
+      "cpm": "13.69",
+      "ctr": "2.905",
       "actions": [
-        { "action_type": "purchase", "value": "5" },
-        { "action_type": "link_click", "value": "271" },
-        { "action_type": "add_to_cart", "value": "19" }
+        { "action_type": "purchase", "value": "2" },
+        { "action_type": "link_click", "value": "57" },
+        { "action_type": "add_to_cart", "value": "6" }
       ],
       "action_values": [
-        { "action_type": "purchase", "value": "199.90" }
+        { "action_type": "purchase", "value": "59.98" }
       ]
     }
   ],

@@ -17,7 +17,7 @@ async def test_get_insights_follows_cursor_pagination():
 
     # 2 rows on fixture page 1 + 2 rows on page 2
     assert len(insights) == 4
-    assert {i.campaign_id for i in insights} == {"6001", "6002"}
+    assert {i.campaign_id for i in insights} == {"6001", "6002", "6003", "6004"}
 
 
 @pytest.mark.asyncio
@@ -25,10 +25,10 @@ async def test_insight_roas_computed_from_purchase_value():
     async with MetaAdsClient(_mock_settings()) as client:
         insights = await client.get_insights()
 
-    day_one = next(i for i in insights if i.date_start == "2026-08-23")
-    assert day_one.spend == Decimal("142.37")
-    assert day_one.purchase_value == Decimal("254.94")
-    assert day_one.roas == Decimal("254.94") / Decimal("142.37")
+    prospecting = next(i for i in insights if i.campaign_id == "6001")
+    assert prospecting.spend == Decimal("52.30")
+    assert prospecting.purchase_value == Decimal("89.97")
+    assert prospecting.roas == Decimal("89.97") / Decimal("52.30")
 
 
 @pytest.mark.asyncio
@@ -36,7 +36,7 @@ async def test_daily_ad_performance_aggregates_across_campaigns():
     async with MetaAdsClient(_mock_settings()) as client:
         summary = await client.daily_ad_performance()
 
-    expected_spend = Decimal("142.37") + Decimal("158.02") + Decimal("171.55") + Decimal("64.18")
+    expected_spend = Decimal("52.30") + Decimal("28.75") + Decimal("41.60") + Decimal("19.85")
     assert summary.spend == expected_spend
-    assert summary.purchases == 6 + 5 + 8 + 4
+    assert summary.purchases == 3 + 2 + 2 + 1
     assert summary.roas == summary.purchase_value / summary.spend
