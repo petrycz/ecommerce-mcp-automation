@@ -1,0 +1,50 @@
+{
+  "data": [
+    {
+      "date_start": "2026-08-23",
+      "date_stop": "2026-08-23",
+      "account_id": "1234567890",
+      "campaign_id": "6001",
+      "campaign_name": "Prospecting - Broad US",
+      "spend": "142.37",
+      "impressions": "18420",
+      "clicks": "311",
+      "reach": "15990",
+      "cpm": "7.73",
+      "ctr": "1.688",
+      "actions": [
+        { "action_type": "purchase", "value": "6" },
+        { "action_type": "link_click", "value": "298" },
+        { "action_type": "add_to_cart", "value": "22" }
+      ],
+      "action_values": [
+        { "action_type": "purchase", "value": "254.94" }
+      ]
+    },
+    {
+      "date_start": "2026-08-24",
+      "date_stop": "2026-08-24",
+      "account_id": "1234567890",
+      "campaign_id": "6001",
+      "campaign_name": "Prospecting - Broad US",
+      "spend": "158.02",
+      "impressions": "19875",
+      "clicks": "289",
+      "reach": "17110",
+      "cpm": "7.95",
+      "ctr": "1.454",
+      "actions": [
+        { "action_type": "purchase", "value": "5" },
+        { "action_type": "link_click", "value": "271" },
+        { "action_type": "add_to_cart", "value": "19" }
+      ],
+      "action_values": [
+        { "action_type": "purchase", "value": "199.90" }
+      ]
+    }
+  ],
+  "paging": {
+    "cursors": { "before": "AaB1", "after": "AaB2" },
+    "next": "https://graph.facebook.com/v21.0/act_1234567890/insights?after=AaB2"
+  }
+}

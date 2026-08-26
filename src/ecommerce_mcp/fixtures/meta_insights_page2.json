@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "date_start": "2026-08-25",
+      "date_stop": "2026-08-25",
+      "account_id": "1234567890",
+      "campaign_id": "6001",
+      "campaign_name": "Prospecting - Broad US",
+      "spend": "171.55",
+      "impressions": "21030",
+      "clicks": "342",
+      "reach": "18220",
+      "cpm": "8.16",
+      "ctr": "1.626",
+      "actions": [
+        { "action_type": "purchase", "value": "8" },
+        { "action_type": "link_click", "value": "320" },
+        { "action_type": "add_to_cart", "value": "27" }
+      ],
+      "action_values": [
+        { "action_type": "purchase", "value": "294.85" }
+      ]
+    },
+    {
+      "date_start": "2026-08-25",
+      "date_stop": "2026-08-25",
+      "account_id": "1234567890",
+      "campaign_id": "6002",
+      "campaign_name": "Retargeting - 30d Site Visitors",
+      "spend": "64.18",
+      "impressions": "6210",
+      "clicks": "158",
+      "reach": "5340",
+      "cpm": "10.33",
+      "ctr": "2.544",
+      "actions": [
+        { "action_type": "purchase", "value": "4" },
+        { "action_type": "link_click", "value": "149" },
+        { "action_type": "add_to_cart", "value": "11" }
+      ],
+      "action_values": [
+        { "action_type": "purchase", "value": "119.96" }
+      ]
+    }
+  ],
+  "paging": {
+    "cursors": { "before": "AaB2", "after": "AaB3" }
+  }
+}
