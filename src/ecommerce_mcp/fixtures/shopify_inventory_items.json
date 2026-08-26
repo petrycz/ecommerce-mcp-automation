@@ -3,6 +3,7 @@
     { "id": 90001, "sku": "TSHIRT-BLK-M", "cost": "8.50" },
     { "id": 90002, "sku": "TSHIRT-BLK-L", "cost": "8.50" },
     { "id": 90005, "sku": "MUG-WHT-11OZ", "cost": "6.25" },
-    { "id": 90010, "sku": "CAP-NVY-OS", "cost": "9.75" }
+    { "id": 90010, "sku": "CAP-NVY-OS", "cost": "9.75" },
+    { "id": 90099, "sku": "TOTE-NAT-OS", "cost": null }
   ]
 }

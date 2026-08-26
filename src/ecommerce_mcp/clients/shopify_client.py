@@ -25,7 +25,7 @@ class LineItem(BaseModel):
     id: int
     product_id: int
     variant_id: int
-    sku: str
+    sku: str | None = None  # Shopify allows variants with no SKU set
     title: str
     quantity: int
     price: Decimal
@@ -116,7 +116,9 @@ class ShopifyClient:
         Shopify doesn't expose cost on the order line item directly, so this
         mirrors the real lookup: fetch each variant for its
         `inventory_item_id`, then a single batched `inventory_items` request
-        for the `cost` field.
+        for the `cost` field. `cost` is nullable on a live store — a merchant
+        may never have filled it in for a given item — and that's treated as
+        zero cost rather than an error.
         """
         inventory_item_id_by_variant: dict[int, int] = {}
         for variant_id in variant_ids:
@@ -129,7 +131,8 @@ class ShopifyClient:
         ids_param = ",".join(str(i) for i in set(inventory_item_id_by_variant.values()))
         response = await self._get(f"/admin/api/{self._version}/inventory_items.json", ids=ids_param)
         cost_by_inventory_item = {
-            item["id"]: Decimal(item["cost"]) for item in response.json()["inventory_items"]
+            item["id"]: Decimal(item["cost"]) if item["cost"] is not None else Decimal(0)
+            for item in response.json()["inventory_items"]
         }
 
         return {

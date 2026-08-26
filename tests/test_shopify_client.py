@@ -30,6 +30,17 @@ async def test_get_cogs_by_variant_resolves_real_lookup_chain():
 
 
 @pytest.mark.asyncio
+async def test_get_cogs_by_variant_treats_null_cost_as_zero():
+    # A live store can have an inventory item with no cost ever entered —
+    # this shouldn't raise, it should resolve to 0 (regression: real dev
+    # store hit this via a sample product with cost=null).
+    async with ShopifyClient(_mock_settings()) as client:
+        costs = await client.get_cogs_by_variant({44099})
+
+    assert costs[44099] == Decimal(0)
+
+
+@pytest.mark.asyncio
 async def test_daily_pnl_excludes_refunded_orders():
     async with ShopifyClient(_mock_settings()) as client:
         pnl = await client.daily_pnl()
