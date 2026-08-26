@@ -5,13 +5,22 @@ MCP tools, plus a reporting agent that pulls both into one formatted daily
 P&L + ad-performance spreadsheet — no manual copy-paste between platforms.
 
 > **This is a demonstration built against the public Shopify Admin API and
-> Meta Marketing API docs — it has not run a live store.** It's a clean-room
-> sample: real endpoints, real auth, real pagination, real error handling,
-> written fresh to show exactly how this kind of automation gets built. It
-> runs end-to-end in **mock mode** with zero credentials (realistic fixture
-> data standing in for live responses), and switches to **live mode**
+> Meta Marketing API docs — not something that has run a real business.** It's
+> a clean-room sample: real endpoints, real auth, real pagination, real error
+> handling, written fresh to show exactly how this kind of automation gets
+> built. It runs end-to-end in **mock mode** with zero credentials (realistic
+> fixture data standing in for live responses), and switches to **live mode**
 > per-integration the moment real credentials are set — see
 > [How to run](#how-to-run).
+>
+> The Shopify client has been run live against a real Shopify Partners
+> **development store** (a sandbox store, not a production business) —
+> real auth, a real order, real API responses. That process surfaced and
+> fixed two real nullability edge cases (see
+> [Known simplifications](#known-simplifications)) that the mock fixtures
+> alone hadn't covered. Meta Ads runs against the mock transport by default
+> in this repo; the client code is written the same way and switches to live
+> the moment `META_ACCESS_TOKEN`/`META_AD_ACCOUNT_ID` are set.
 
 ## What it does
 
@@ -165,7 +174,10 @@ polish for a sample like this:
 
 - **COGS** uses Shopify's `InventoryItem.cost` field via the real two-hop
   lookup (variant → `inventory_item_id` → batched `inventory_items` fetch)
-  — Shopify doesn't expose cost on the order line item directly.
+  — Shopify doesn't expose cost on the order line item directly. Both `cost`
+  and line-item `sku` are nullable on a live store (a merchant may never have
+  set them) — found via live testing against a real dev store, not from the
+  docs alone. Both are handled as zero-cost / missing-SKU rather than erroring.
 - **Refunded orders** are excluded entirely from revenue/COGS/order count in
   `daily_pnl()`. Partial refunds/returns accounting would need the Refund
   resource — out of scope here.
