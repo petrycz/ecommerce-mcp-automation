@@ -152,7 +152,12 @@ mode by default.
 
 `skills/daily-report/SKILL.md` wraps the report-generation workflow so
 Claude Code runs it on a natural-language trigger ("run the daily report")
-rather than needing the exact CLI command.
+rather than needing the exact CLI command. **The full-report path doesn't
+need the MCP config above at all** — it runs `daily_report.py` directly,
+which calls the clients as plain Python, no MCP involved. MCP config is only
+needed for the Skill's other path: answering a one-off single-metric
+question ("what's today's ROAS?") by calling `get_daily_pnl` /
+`get_daily_ad_performance` as MCP tools instead of running the whole report.
 
 ## Project layout
 

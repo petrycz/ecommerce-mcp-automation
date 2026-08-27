@@ -16,7 +16,9 @@ Trigger on requests like "run the daily report," "what's today's P&L," "pull
 this week's ad performance," "regenerate the report," or "how's ROAS looking
 today." Not for one-off questions about a single number — for those, call the
 `get_daily_pnl` / `get_daily_ad_performance` MCP tools directly instead of
-running the full workbook build.
+running the full workbook build (this requires the MCP servers to be
+registered — see the README's "As MCP servers" section. The full report path
+below does **not** need MCP config; it runs the client code directly).
 
 ## Running it
 
