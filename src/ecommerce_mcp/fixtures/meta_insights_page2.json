@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "date_start": "2026-08-25",
+      "date_stop": "2026-08-25",
+      "account_id": "1234567890",
+      "campaign_id": "6003",
+      "campaign_name": "Lookalike 1% - US",
+      "spend": "41.60",
+      "impressions": "4300",
+      "clicks": "77",
+      "reach": "3700",
+      "cpm": "9.67",
+      "ctr": "1.791",
+      "actions": [
+        { "action_type": "purchase", "value": "2" },
+        { "action_type": "link_click", "value": "71" },
+        { "action_type": "add_to_cart", "value": "7" }
+      ],
+      "action_values": [
+        { "action_type": "purchase", "value": "49.98" }
+      ]
+    },
+    {
+      "date_start": "2026-08-25",
+      "date_stop": "2026-08-25",
+      "account_id": "1234567890",
+      "campaign_id": "6004",
+      "campaign_name": "Catalog Sales - DPA",
+      "spend": "19.85",
+      "impressions": "1500",
+      "clicks": "33",
+      "reach": "1290",
+      "cpm": "13.23",
+      "ctr": "2.200",
+      "actions": [
+        { "action_type": "purchase", "value": "1" },
+        { "action_type": "link_click", "value": "30" },
+        { "action_type": "add_to_cart", "value": "3" }
+      ],
+      "action_values": [
+        { "action_type": "purchase", "value": "24.99" }
+      ]
+    }
+  ],
+  "paging": {
+    "cursors": { "before": "AaB2", "after": "AaB3" }
+  }
+}
